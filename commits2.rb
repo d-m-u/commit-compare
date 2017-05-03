@@ -4,7 +4,6 @@ def commits
 
 puts "Enter your github username: "
 you = gets.chomp
-#you = you.chomp
 puts "Enter someone else's github username: "
 them = gets.chomp
 
@@ -16,14 +15,14 @@ them = gets.chomp
   file2 = open("https://github.com/" + them)
   theirContributions = (File.foreach(file2).grep /contributions/).to_s.gsub(/[^0-9 ]/i, '').to_i
   file2.close
-  daysSinceHisStart = (Date.today - Date.new(2008,3,8)).to_i
+  daysSinceTheirStart = (Date.today - Date.new(2008,3,8)).to_i
 
   goal = (theirContributions.to_f/365).ceil
 
   puts "user  	| active days 	| contributions | average "
   puts "--------------------------------------------------"
   puts "#{you}	| #{daysSinceYourStart} 		|#{yourContributions} 		|#{yourContributions.to_f/365}"
-  puts "#{them}	| #{daysSinceHisStart} 		|#{theirContributions} 		|#{(theirContributions.to_f/365)}"
+  puts "#{them}	| #{daysSinceTheirStart} 		|#{theirContributions} 		|#{(theirContributions.to_f/365)}"
 
   puts ""
   puts "You need to be doing a total of #{goal} commits per day to stay even"
@@ -33,3 +32,5 @@ them = gets.chomp
     puts "and you're good"
   end
 end
+
+commits
