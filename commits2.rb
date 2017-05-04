@@ -10,11 +10,15 @@ them = gets.chomp
   file = open("https://github.com/" + you)
   yourContributions = (File.foreach(file).grep /contributions/).to_s.gsub(/[^0-9 ]/i, '').to_i
   file.close
+  
+  #CHANGEME: your start date here
   daysSinceYourStart = (Date.today - Date.new(2016,6,3)).to_i
 
   file2 = open("https://github.com/" + them)
   theirContributions = (File.foreach(file2).grep /contributions/).to_s.gsub(/[^0-9 ]/i, '').to_i
   file2.close
+
+  #CHANGEME:their start date here
   daysSinceTheirStart = (Date.today - Date.new(2008,3,8)).to_i
 
   goal = (theirContributions.to_f/365).ceil
