@@ -12,14 +12,13 @@ them = gets.chomp
   file.close
   
   #CHANGEME: your start date here
-  daysSinceYourStart = (Date.today - Date.new(2016,6,3)).to_i
+  # your start
+  daysSinceYourStart = Date.today - Date.new(2016,6,3)).to_i
+  # Date.new(2016,6,3)).to_i
 
   file2 = open("https://github.com/" + them)
   theirContributions = (File.foreach(file2).grep /contributions/).to_s.gsub(/[^0-9 ]/i, '').to_i
   file2.close
-
-  #CHANGEME:their start date here
-  daysSinceTheirStart = (Date.today - Date.new(2008,3,8)).to_i
 
   goal = (theirContributions.to_f/365).ceil
 
@@ -30,8 +29,8 @@ them = gets.chomp
 
   puts ""
   puts "You need to be doing a total of #{goal} commits per day to stay even"
-  if goal > (yourContributions/daysSinceYourStart)
-    puts "oh no, you're down by #{(goal* daysSinceYourStart) - (yourContributions)}"
+  if goal > (yourContributions.to_f/365).ceil
+    puts "oh no, you're down by #{(goal* 365) - (yourContributions)}"
   else
     puts "and you're good"
   end
