@@ -24,8 +24,8 @@ them = gets.chomp
 
   puts "user  	| active days 	| contributions | average "
   puts "--------------------------------------------------"
-  puts "#{you}	| #{daysSinceYourStart} 		|#{yourContributions} 		|#{yourContributions.to_f/365}"
-  puts "#{them}	| #{daysSinceTheirStart} 		|#{theirContributions} 		|#{(theirContributions.to_f/365)}"
+  puts "#{you}	|#{yourContributions} 		|#{yourContributions.to_f/365}"
+  puts "#{them}	|#{theirContributions} 		|#{(theirContributions.to_f/365)}"
 
   puts ""
   puts "You need to be doing a total of #{goal} commits per day to stay even"
