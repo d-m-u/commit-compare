@@ -22,10 +22,10 @@ them = gets.chomp
 
   goal = (theirContributions.to_f/365).ceil
 
-  puts "user    | active days   | contributions | average | average by workdays "
-  puts "------------------------------------------------------------------------"
-  puts "#{you}  |#{yourContributions}     |#{yourContributions.to_f/365}    |#{yourContributions.to_f/241}"
-  puts "#{them} |#{theirContributions}     |#{(theirContributions.to_f/365)}    |#{(theirContributions.to_f/241)}"
+  puts "user    | contributions    | average             |  average by workdays "
+  puts "-------------------------------------------------------------------------------------------"
+  puts "#{you}    |#{yourContributions}             |#{yourContributions.to_f/365}    |#{yourContributions.to_f/241}"
+  puts "#{them}   |#{theirContributions}             |#{(theirContributions.to_f/365)}    |#{(theirContributions.to_f/241)}"
 
   puts ""
   puts "You need to be doing a total of #{goal} commits per day to stay even"
