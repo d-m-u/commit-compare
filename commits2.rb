@@ -30,7 +30,7 @@ them = gets.chomp
   puts ""
   puts "You need to be doing a total of #{goal} commits per day to stay even"
   if theirContributions > (yourContributions.to_f/365).ceil
-    puts "oh no, you're down by #{theirContributions - yourContributions}"
+    puts "oh no, you're down by #{(theirContributions.to_f/241).ceil - (yourContributions.to_f/241).ceil}"
   else
     puts "and you're good by  #{theirContributions - yourContributions}"
   end
