@@ -2,8 +2,7 @@ require 'date'
 require 'open-uri'
 def commits
 
-puts "Enter your github username: "
-you = gets.chomp
+you = 'd-m-u'
 puts "Enter someone else's github username: "
 them = gets.chomp
 
