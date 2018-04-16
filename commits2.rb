@@ -19,7 +19,7 @@ them = gets.chomp
   theirContributions = (File.foreach(file2).grep /contributions/).to_s.gsub(/[^0-9 ]/i, '').to_i
   file2.close
 
-  goal = (theirContributions.to_f/365).ceil
+  goal = (theirContributions.to_f/241).ceil
 
   puts "user    | contributions    | average             |  average by workdays "
   puts "-------------------------------------------------------------------------------------------"
@@ -29,7 +29,7 @@ them = gets.chomp
   puts ""
   puts "You need to be doing a total of #{goal} commits per day to stay even"
   if theirContributions > (yourContributions.to_f/365).ceil
-    puts "oh no, you're down by #{(theirContributions.to_f/241).ceil - (yourContributions.to_f/241).ceil}"
+    puts "oh no, you're down by #{theirContributions - yourContributions}"
   else
     puts "and you're good by  #{theirContributions - yourContributions}"
   end
